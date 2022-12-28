@@ -4,15 +4,6 @@
       <div class="true-gym">
         <p>TRUE GYM</p>
       </div>
-
-      <!-- <v-spacer></v-spacer> -->
-      <v-btn
-        :prepend-icon="
-          theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'
-        "
-        @click="onClick"
-      ></v-btn>
-      <!-- <v-card class="d-flex justify-center">das</v-card> -->
       <div>
         <v-btn color="secondary">Documentation</v-btn>
         <v-btn color="secondary">contact us</v-btn>
@@ -27,19 +18,10 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "HeaderComponent",
   data() {
-    return {
-      theme: "light",
-    };
+    return {};
   },
-  methods: {
-    onClick() {
-      this.theme == "dark" ? "light" : "dark";
-      this.$vuetify.theme.dark = true;
-    },
-  },
+  methods: {},
 });
-
-// const theme = ref("light");
 </script>
 <style scoped>
 .true-gym {
