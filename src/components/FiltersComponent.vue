@@ -42,6 +42,7 @@ export default defineComponent({
   display: flex;
   align-self: center;
   width: 1102px;
+  max-width: 100%;
   top: 400px;
   padding: 10px;
   background: #ffffff;

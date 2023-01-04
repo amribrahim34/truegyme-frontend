@@ -7,7 +7,9 @@
       <v-container class="mt-15">
         <RecommendedComponent></RecommendedComponent>
         <OfferedComponent></OfferedComponent>
+        <PartnerComponent></PartnerComponent>
       </v-container>
+      <FooterComponent></FooterComponent>
     </v-main>
   </v-app>
 </template>
@@ -17,13 +19,18 @@ import HeaderComponent from "../src/components/HeaderComponent.vue";
 import FiltersComponent from "../src/components/FiltersComponent.vue";
 import OfferedComponent from "../src/components/OfferedComponent.vue";
 import RecommendedComponent from "../src/components/RecommendedComponent.vue";
+import PartnerComponent from "../src/components/PartnerComponent.vue";
+import FooterComponent from "../src/components/FooterComponent.vue";
 import { defineComponent } from "vue";
+
 export default defineComponent({
   components: {
     HeaderComponent,
     FiltersComponent,
     RecommendedComponent,
     OfferedComponent,
+    PartnerComponent,
+    FooterComponent,
   },
 });
 </script>
