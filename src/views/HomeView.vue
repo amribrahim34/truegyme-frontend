@@ -1,5 +1,5 @@
 <template>
-  <!-- <v-app>
+  <v-app>
     <header-component></header-component>
     <FiltersComponent></FiltersComponent>
     <v-img src="../src/assets/find.png" class="map-img"></v-img>
@@ -11,17 +11,16 @@
       </v-container>
       <FooterComponent></FooterComponent>
     </v-main>
-  </v-app> -->
-  <router-view></router-view>
+  </v-app>
 </template>
 
-<script>
-import HeaderComponent from "../src/components/HeaderComponent.vue";
-import FiltersComponent from "../src/components/FiltersComponent.vue";
-import OfferedComponent from "../src/components/OfferedComponent.vue";
-import RecommendedComponent from "../src/components/RecommendedComponent.vue";
-import PartnerComponent from "../src/components/PartnerComponent.vue";
-import FooterComponent from "../src/components/FooterComponent.vue";
+<script lang="ts">
+import HeaderComponent from "../../src/components/HeaderComponent.vue";
+import FiltersComponent from "../../src/components/FiltersComponent.vue";
+import OfferedComponent from "../../src/components/OfferedComponent.vue";
+import RecommendedComponent from "../../src/components/RecommendedComponent.vue";
+import PartnerComponent from "../../src/components/PartnerComponent.vue";
+import FooterComponent from "../../src/components/FooterComponent.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
