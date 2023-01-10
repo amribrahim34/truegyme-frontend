@@ -24,7 +24,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "FiltersComponent",
+  name: "SearchFieldsComponent",
   data() {
     return {};
   },
@@ -43,7 +43,6 @@ export default defineComponent({
   align-self: center;
   width: 1102px;
   max-width: 100%;
-  top: 400px;
   padding: 10px;
   background: #ffffff;
   box-shadow: 0px 1px 40px 3px rgba(0, 0, 0, 0.25);

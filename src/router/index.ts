@@ -1,11 +1,11 @@
 import HomeView from "@/views/HomeView.vue";
-import CatalogView from "@/views/CatalogView.vue";
+import SearchView from "@/views/SearchView.vue";
 // Composables
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   { path: "/", name: "Home", component: HomeView },
-  { path: "/catalog", name: "Catalog", component: CatalogView },
+  { path: "/search", name: "Search", component: SearchView },
 ];
 
 const router = createRouter({
