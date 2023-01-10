@@ -22,6 +22,7 @@ import RecommendedComponent from "../../src/components/RecommendedComponent.vue"
 import PartnerComponent from "../../src/components/PartnerComponent.vue";
 import FooterComponent from "../../src/components/FooterComponent.vue";
 import { defineComponent } from "vue";
+import { useCitiesStore } from "@/stores/CitiesStore";
 
 export default defineComponent({
   components: {
