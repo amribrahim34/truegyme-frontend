@@ -5,16 +5,16 @@ import axios from "axios";
 
 const url = import.meta.env.VITE_BASE_URL;
 
-export const useCitiesStore = defineStore("CitiesStore", {
+export const usePartnersStore = defineStore("PartnersStore", {
   state: () => ({
-    cities: [],
+    partners: [],
   }),
   // could also be defined as
   // state: () => ({ count: 0 })
   actions: {
-    async getCities(): Promise<void> {
-      await axios.get(`${url}/cities/api`).then(function (response) {
-        this.cities = response.data;
+    async getPartners(): Promise<void> {
+      await axios.get(`${url}/partners/api`).then(function (response) {
+        this.partners = response.data;
       });
     },
   },

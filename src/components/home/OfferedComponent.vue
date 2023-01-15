@@ -33,13 +33,20 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import { mapActions } from "pinia";
+import { useGymStore } from "@/stores/GymsStore";
 
 export default defineComponent({
   name: "OfferedComponent",
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    ...mapActions(useGymStore, ["getGyms"]),
+  },
+  created() {
+    this.getGyms();
+  },
 });
 </script>
 <style scoped></style>
