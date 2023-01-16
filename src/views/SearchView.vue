@@ -10,6 +10,8 @@
         <OfferedComponent></OfferedComponent>
         <PartnerComponent></PartnerComponent>
       </v-container>-->
+      <FiltersComponent></FiltersComponent>
+
       <FooterComponent></FooterComponent>
     </v-main>
   </v-app>
@@ -17,6 +19,7 @@
 <script lang="ts">
 import HeaderComponent from "../components/shared/HeaderComponent.vue";
 import SearchFieldsComponent from "../components/shared/SearchFieldsComponent.vue";
+import FiltersComponent from "../components/search/FiltersComponent.vue";
 import FooterComponent from "../components/shared/FooterComponent.vue";
 import { defineComponent } from "vue";
 import { useCitiesStore } from "@/stores/CitiesStore";
@@ -26,6 +29,7 @@ export default defineComponent({
     HeaderComponent,
     SearchFieldsComponent,
     FooterComponent,
+    FiltersComponent,
   },
 });
 </script>
