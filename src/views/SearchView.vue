@@ -10,7 +10,10 @@
         <OfferedComponent></OfferedComponent>
         <PartnerComponent></PartnerComponent>
       </v-container>-->
-      <FiltersComponent></FiltersComponent>
+      <div class="side">
+        <FiltersComponent></FiltersComponent>
+        <ResultsComponent></ResultsComponent>
+      </div>
 
       <FooterComponent></FooterComponent>
     </v-main>
@@ -20,6 +23,7 @@
 import HeaderComponent from "../components/shared/HeaderComponent.vue";
 import SearchFieldsComponent from "../components/shared/SearchFieldsComponent.vue";
 import FiltersComponent from "../components/search/FiltersComponent.vue";
+import ResultsComponent from "../components/search/ResultsComponent.vue";
 import FooterComponent from "../components/shared/FooterComponent.vue";
 import { defineComponent } from "vue";
 import { useCitiesStore } from "@/stores/CitiesStore";
@@ -30,11 +34,17 @@ export default defineComponent({
     SearchFieldsComponent,
     FooterComponent,
     FiltersComponent,
+    ResultsComponent,
   },
 });
 </script>
 <style scoped>
 .filters-div {
   top: 110px;
+}
+.side {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-top: 80px;
 }
 </style>

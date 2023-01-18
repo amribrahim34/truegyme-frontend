@@ -68,10 +68,9 @@ export default defineComponent({
 </script>
 <style scoped>
 .card {
-  margin-top: 80px;
   margin-left: 30px;
   margin-bottom: 80px;
-  max-width: 300px;
+  min-width: 350px;
   padding: 10px;
 }
 .field-title {
