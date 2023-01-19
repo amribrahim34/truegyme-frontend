@@ -22,13 +22,21 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import { mapActions, mapWritableState } from "pinia";
+import { useGymStore } from "@/stores/GymsStore";
 
 export default defineComponent({
   name: "SearchFieldsComponent",
   data() {
     return {};
   },
-  methods: {},
+  computed: {
+    ...mapWritableState(useGymStore, ["gyms"]),
+  },
+  methods: {
+    ...mapActions(useGymStore, ["getGyms"]),
+    search() {},
+  },
 });
 </script>
 <style scoped>

@@ -9,8 +9,8 @@ export const useAreasStore = defineStore("AreasStore", {
     areas: [],
   }),
   actions: {
-    async getAreas(): Promise<void> {
-      await axios.get(`${url}/areas/api`).then(function (response) {
+    getAreas(): void {
+      axios.get(`${url}/areas/api`).then((response) => {
         this.areas = response.data;
       });
     },

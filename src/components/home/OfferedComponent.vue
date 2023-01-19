@@ -7,24 +7,23 @@
         :key="index"
         v-slot="{ isSelected, toggle }"
       >
-        <v-card class="mx-2" max-width="270">
-          <v-img
-            class="align-end"
-            height="150"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-            cover
-          >
-          </v-img>
-          <v-card-title class="font-weight-bold">{{ gym.name }}</v-card-title>
+        <v-col cols="3">
+          <v-card class="mx-2">
+            <v-img class="align-end" height="150" :src="gym.image" cover>
+            </v-img>
+            <v-card-title class="font-weight-bold">{{ gym.name }}</v-card-title>
 
-          <v-card-subtitle class="pt-4">
-            {{ gym.about }}
-          </v-card-subtitle>
+            <v-card-subtitle class="pt-4">
+              {{ gym.about }}
+            </v-card-subtitle>
 
-          <v-card-text>
-            <div class="text-secondary d-flex justify-end">280EGP / Month</div>
-          </v-card-text>
-        </v-card>
+            <v-card-text>
+              <div class="text-secondary d-flex justify-end">
+                {{ gym.price }}EGP / Month
+              </div>
+            </v-card-text>
+          </v-card></v-col
+        >
       </v-slide-group-item>
     </v-slide-group>
   </v-sheet>
@@ -50,4 +49,14 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped></style>
+<style scoped>
+.gym {
+  width: 200px;
+}
+.head {
+  color: #043682;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 24px;
+}
+</style>

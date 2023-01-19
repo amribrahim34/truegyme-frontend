@@ -12,8 +12,8 @@ export const useCitiesStore = defineStore("CitiesStore", {
   // could also be defined as
   // state: () => ({ count: 0 })
   actions: {
-    async getCities(): Promise<void> {
-      await axios.get(`${url}/cities/api`).then(function (response) {
+    getCities(): void {
+      axios.get(`${url}/cities/api`).then((response) => {
         this.cities = response.data;
       });
     },

@@ -11,14 +11,10 @@ export const useGymStore = defineStore("GymStore", {
     };
   },
   actions: {
-    getGyms(): Promise<void> {
-      axios.get(`${url}/gyms/api`).then(function (response) {
-        // console.log(response.data);
+    getGyms(params): void {
+      axios.get(`${url}/gyms/api`, { params }).then((response) => {
         this.gyms = response.data;
-        // console.log(gymsArr);
       });
-      // this.gyms = gymsArr;
-      //   return this.cities;
     },
   },
 });

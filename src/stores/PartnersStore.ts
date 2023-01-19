@@ -12,8 +12,8 @@ export const usePartnersStore = defineStore("PartnersStore", {
   // could also be defined as
   // state: () => ({ count: 0 })
   actions: {
-    async getPartners(): Promise<void> {
-      await axios.get(`${url}/partners/api`).then(function (response) {
+    getPartners(): Promise<void> {
+      axios.get(`${url}/partners/api`).then((response) => {
         this.partners = response.data;
       });
     },
