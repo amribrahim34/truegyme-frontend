@@ -5,15 +5,19 @@ import axios from "axios";
 const url = import.meta.env.VITE_BASE_URL;
 
 export const useGymStore = defineStore("GymStore", {
-  state: () => ({
-    gyms: [],
-  }),
+  state: () => {
+    return {
+      gyms: [],
+    };
+  },
   actions: {
-    async getGyms(): Promise<void> {
-      await axios.get(`${url}/gyms/api`).then(function (response) {
-        console.log(response);
+    getGyms(): Promise<void> {
+      axios.get(`${url}/gyms/api`).then(function (response) {
+        // console.log(response.data);
         this.gyms = response.data;
+        // console.log(gymsArr);
       });
+      // this.gyms = gymsArr;
       //   return this.cities;
     },
   },

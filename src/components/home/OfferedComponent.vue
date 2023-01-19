@@ -3,8 +3,8 @@
   <v-sheet class="mx-auto">
     <v-slide-group show-arrows class="pa-4">
       <v-slide-group-item
-        v-for="n in 10"
-        :key="n"
+        v-for="(gym, index) in gyms"
+        :key="index"
         v-slot="{ isSelected, toggle }"
       >
         <v-card class="mx-2" max-width="270">
@@ -15,12 +15,10 @@
             cover
           >
           </v-img>
-          <v-card-title class="font-weight-bold"
-            >THE MECCA GYM {{ n }}</v-card-title
-          >
+          <v-card-title class="font-weight-bold">{{ gym.name }}</v-card-title>
 
           <v-card-subtitle class="pt-4">
-            Since 1970 For body building.
+            {{ gym.about }}
           </v-card-subtitle>
 
           <v-card-text>
@@ -33,13 +31,16 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import { mapActions } from "pinia";
+import { mapActions, mapWritableState } from "pinia";
 import { useGymStore } from "@/stores/GymsStore";
 
 export default defineComponent({
   name: "OfferedComponent",
   data() {
     return {};
+  },
+  computed: {
+    ...mapWritableState(useGymStore, ["gyms"]),
   },
   methods: {
     ...mapActions(useGymStore, ["getGyms"]),
