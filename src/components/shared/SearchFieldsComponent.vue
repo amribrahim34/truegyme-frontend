@@ -2,20 +2,40 @@
   <v-row class="filters-div">
     <v-col sm="4" md="3">
       <p class="filter">City</p>
-      <v-select label="Select Your city" variant="underlined"></v-select>
+      <v-select
+        label="Select Your city"
+        variant="underlined"
+        v-model="city"
+        :items="cities"
+        clearable
+      ></v-select>
     </v-col>
     <v-col sm="4" md="3">
       <p class="filter">Area</p>
-      <v-select label="Select Your area" variant="underlined"></v-select>
+      <v-select
+        label="Select Your area"
+        variant="underlined"
+        v-model="area"
+        clearable
+        :items="areas"
+      ></v-select>
     </v-col>
     <v-col sm="4" md="3">
       <p class="filter">Search By Name</p>
       <br />
-      <input type="text" class="search-text" />
+      <input type="text" class="search-text" v-model="name" />
     </v-col>
     <v-col sm="4" md="3">
       <div class="botton">
-        <v-btn icon="mdi-magnify" rounded="lg" color="secondary"></v-btn>
+        <router-link to="/search">
+          <v-btn
+            icon="mdi-magnify"
+            rounded="lg"
+            color="secondary"
+            @click="search"
+          ></v-btn>
+        </router-link>
+        <!-- <v-btn icon="md  i-magnify" rounded="lg" color="secondary"></v-btn> -->
       </div>
     </v-col>
   </v-row>
@@ -28,14 +48,27 @@ import { useGymStore } from "@/stores/GymsStore";
 export default defineComponent({
   name: "SearchFieldsComponent",
   data() {
-    return {};
+    return {
+      name: "",
+      area: "",
+      city: "",
+      cities: ["Cairo", "Giza"],
+      areas: ["Nasr City", "Maadi", "Doki", "Haram", "Faisal"],
+    };
   },
   computed: {
     ...mapWritableState(useGymStore, ["gyms"]),
   },
   methods: {
     ...mapActions(useGymStore, ["getGyms"]),
-    search() {},
+    search() {
+      const params = {
+        name: this.name,
+        area: this.area,
+        city: this.city,
+      };
+      this.getGyms(params);
+    },
   },
 });
 </script>

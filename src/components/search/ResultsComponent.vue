@@ -1,20 +1,19 @@
 <template>
   <div class="main-card">
-    <v-card class="item-card" v-for="n in 5">
+    <v-card class="item-card" v-for="(gym, index) in gyms">
       <div class="flex">
         <div>
           <v-img
             class="bg-white"
             width="200"
             :aspect-ratio="3"
-            src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+            :src="gym.image"
           ></v-img>
         </div>
         <div>
-          <p class="text-h5 font-weight-bold">THE MECCA GYM</p>
-          <p class="description-text">Since 1970 For body building.</p>
-          <p class="description-text">2932 N Eagle Rd #101, Maadi, Cairo</p>
-          <p class="price-text font-weight-bold">Start from 280EGP / Month</p>
+          <p class="text-h5 font-weight-bold">{{ gym.name }}</p>
+          <p class="description-text">{{ gym.about }}</p>
+          <!-- <p class="price-text font-weight-bold">Start from 280EGP / Month</p> -->
         </div>
       </div>
       <!-- <v-card-text> This is content </v-card-text> -->
@@ -23,11 +22,16 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import { mapActions, mapWritableState } from "pinia";
+import { useGymStore } from "@/stores/GymsStore";
 
 export default defineComponent({
   name: "ResultsComponent",
   data() {
     return {};
+  },
+  computed: {
+    ...mapWritableState(useGymStore, ["gyms"]),
   },
   methods: {},
 });
