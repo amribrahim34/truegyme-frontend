@@ -2,10 +2,14 @@
   <v-app-bar>
     <div class="app-bar">
       <div class="true-gym">
-        <p>TRUE GYM</p>
+        <router-link to="/">
+          <p>TRUE GYM</p>
+        </router-link>
       </div>
       <div>
-        <v-btn color="secondary">Documentation</v-btn>
+        <a href="/public/Group 124 - TrueGYM Project.docx" download>
+          <v-btn color="secondary">Documentation</v-btn>
+        </a>
         <v-btn color="secondary">contact us</v-btn>
       </div>
       <v-btn variant="flat" color="secondary">login</v-btn>
